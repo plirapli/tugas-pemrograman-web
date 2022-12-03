@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title MK Pemrograman Web
+  body
+    h1 Shopping Cart
+    a(href='/') Kembali
+    br
+    br
+    table 
+      tr
+        th ID
+        th Product Name
+        th Unit Price
+        th Qty
+        th Subtotal
+      each cart in carts
+        tr
+          td #{cart.id}
+          td #{cart.name}
+          td $#{cart.price}
+          td #{cart.qty}
+          td $#{cart.qty * cart.price}
+      tr
+        td &nbsp;
+      tr
+        th(colspan="4" style="text-align: left") Total 
+        td(style="font-weight: bold") $#{total}

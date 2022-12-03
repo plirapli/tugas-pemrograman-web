@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title MK Pemrograman Web
+  body
+    h1 Detail Produk
+    a(href='/') Kembali
+    br
+    br
+    form(action="/cart-process", method="POST")
+      table 
+        tr
+          td ID
+          td :
+          td
+            input(style="outline: none; border: none;" type="text" value=`${product.ProductID}` name="id" readonly)
+        tr
+          td Product Name
+          td :
+          td
+            input(style="outline: none; border: none;" type="text" value=`${product.ProductName}` name="name" readonly)
+        tr
+          td Supplier
+          td :
+          td #{product.CompanyName}
+        tr
+          td Category
+          td :
+          td #{product.CategoryName}
+        tr
+          td Qty per Unit
+          td :
+          td #{product.QuantityPerUnit}
+        tr
+          td Unit Price
+          td :
+          td $
+            input(style="outline: none; border: none;" type="text" value=`${product.UnitPrice}` name="price" readonly)
+        tr
+          td Units in Stock
+          td :
+          td #{product.UnitsInStock}
+        tr
+          td Units on Order
+          td :
+          td #{product.UnitsOnOrder}
+        tr
+          td Reorder Level
+          td :
+          td #{product.ReorderLevel}
+        tr
+          td Discontinued
+          td :
+          td #{product.Discontinued ? 'Yes' : 'No'}
+      label Jumlah: 
+      input(type="number" name="qty")
+      button(type="submit" name="cart-submit") Beli

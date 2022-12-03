@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title MK Pemrograman Web
+  body
+    h1 Selamat Datang
+    a(href="cart") Shopping Cart 
+    br
+    br
+    table 
+      tr
+        td(colspan="3" style="font-size: 1.25rem") Daftar Kategori:
+      tr
+        th ID
+        th Category Name
+        th(style="text-align: left") Description
+      each cat in categories
+        tr
+          td #{cat.CategoryID}
+          td 
+            a(href=`kategori/${cat.CategoryID}`) #{cat.CategoryName}
+          td #{cat.Description}
